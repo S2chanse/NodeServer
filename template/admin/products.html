@@ -1,0 +1,33 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %} <!-- layout/base.html에 정의된 html 코드 상속 -->
+ 
+
+<!-- 변수에 '| safe'를 추가하면 app.js의 nunjucks의 'autoescape'를 false로 설정하지 않아도 html 태그 사용이 가능하다. -->
+<!-- {{ message | safe }} --> 
+
+<!-- layout/base.html에 아래 block content 값을 적용 --> 
+{% block content -%}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>제목</th> 
+            <th>작성일</th>
+            <th>삭제</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>
+                <a href="/admin/products/detail/{{ product.id }}">{{ product.name }}</a>
+            </td>
+            <td>
+                {{ product.dateFormat( product.createdAt ) }}
+            </td>
+            <td>
+                <a href="/admin/products/delete/{{ product.id }}" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin/products/write" class="btn btn-default">작성하기</a>
+
+{% endblock %}
