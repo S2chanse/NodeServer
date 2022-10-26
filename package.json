@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon -e js,html server.js"
+    "start": "npx nodemon -e js,html server.js",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,8 @@
     "mysql2": "^2.2.5",
     "nunjucks": "^3.2.3",
     "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
