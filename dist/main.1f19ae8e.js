@@ -118,15 +118,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var str = "\n010-1234-5678\ntest@gamil.com\nhttps://www.naver.com/?search=abb&serviceKey=adf334sdfds\nThis is my first test\nTest Man\naaaabbbbb333dddd\n";
+var str = "\n010-1234-5678\ntest@gamil.com\nhttps://www.naver.com/?search=abb&serviceKey=adf334sdfds\nThis is my first test.\nTest Man\naaaabbbbb333dddd\nhttp://www.naver.com/?sea\n\uAC00\uB098\uB2E4\uB77C \uB9C8\uBC14\uC0AC \uC544\uC790\uCC28\uCE74\uD0C0\uD30C\uD558 \uD5E4\uD5E4     \uC73C\uD5E4\uC73C\uD5E4\uC73C\uD5E4\uD5C8\n";
 
 //const regexp = new RegExp("test", "gi");
 //g값을 옵션으로 주면 해당 관련건만 array로 만든다.
 //i는 대소문자 구분 없이이다.
 //const regexp = /test/gi;
-var regexp = /Man/gi;
-str = str.replace(regexp, "Woman");
-console.log(str);
+//const regexp = /\.$/gim;
+//const regexp = /\b\w{2,4}\b/g;
+//str = str.replace(regexp, "Woman");
+var h = "  the hello  world       !\n\n\n\n";
+console.log(str.match(/(?<=\/{2}).{1,3}/gi, ""));
 //test = 정규식과 일치하나? boolean으로 반환
 //regexp.test(str)
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -154,7 +156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "7425" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6272" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
